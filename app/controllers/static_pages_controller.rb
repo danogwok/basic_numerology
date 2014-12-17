@@ -37,28 +37,20 @@ class StaticPagesController < ApplicationController
      final +=num[j].to_i
       j+=1
     end
-    output= final.to_i
-    #if output.length !=1
-    #  output2=output.split(//)
-    #  mind(output2)
-    #  else
+    @output= final.to_i
 
-    
-
-    @results = if output < 30
-  		puts 30
-  		respond_to do |format|
-      	format.html # new.html.erb
-     end
+    @results = []
+    @results = 
+    # if @output < 30
+    if final.to_i < 30
+  		30
     else
-        puts output
-        respond_to do |format|
-      format.html # new.html.erb
+        @output
      end
-    end
     #end
 
     @result_values = @results
+    
 
 # @groups = ["baby", "little child", "child", "youth", "yeay", "awesome", "get a room", "adult"]
 
@@ -80,25 +72,25 @@ class StaticPagesController < ApplicationController
 
   @message = case final
   when 0 .. 30
-    puts @uncompatible.shuffle.sample
+    @uncompatible.shuffle.sample
   when 31 .. 40
-    puts @not_compatible.sample
+    @not_compatible.shuffle.sample
   when 41 .. 50
-    puts @almost_compatible.sample
+    @almost_compatible.shuffle.sample
   when 51 .. 60
-    puts @neutral.sample
+    @neutral.shuffle.sample
   when 61 .. 70
-    puts @compatible.sample
+    @compatible.shuffle.sample
   when 71 .. 80
-    puts @highly_compatible.sample
+    p@highly_compatible.shuffle.sample
   when 81 .. 90
-    puts @very_compatible.sample
+    @very_compatible.shuffle.sample
   else
-    puts @meant_to_be.sample
+    @meant_to_be.shuffle.sample
   end   
 
 
- 	#end
+  	#end
   end
 
   def help
