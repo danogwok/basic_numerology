@@ -1,0 +1,17 @@
+<h1><b><center>Love Calculator</center></b></h1>
+<p>Find me in app/views/static_pages/home.html.erb</p>
+
+<h3>Super Love Secret MI5 Message Decryptor!</h3>
+
+
+<%#= simple_form_for @user do |f| %>
+  <%#= f.input :username %>
+  <%#= f.input :password %>
+  <%#= f.button :submit %>
+<%# end %>
+
+<%= form_tag static_pages_result_path do %>
+  <p>Your Name: <%= text_field_tag :yourName %></p>
+  <p>Lover's Name: <%= text_field_tag :otherName %></p>
+  <%= submit_tag "Calculate" %>
+<% end %>

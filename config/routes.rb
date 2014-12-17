@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :calcs
+
+ root 'static_pages#home'
+
+ get 'static_pages/home'
+
+ get 'static_pages/help'
+
+ post 'static_pages/result'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
